@@ -2,8 +2,10 @@ import express from 'express';
 
 const app = express();
 
-app.get('/users' , (request,response) => {
-  return response.send('hello world');
+app.use(express.json());
+
+app.get('/' , (request,response) => {
+  return response.json({message:'hello world'});  
 });
 
 // localhost:3333
